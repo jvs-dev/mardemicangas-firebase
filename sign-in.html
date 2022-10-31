@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mar de Miçangas Salvador</title>
+    <link rel="stylesheet" href="realstyles/sign-in/sign-in.css">
+    <link rel="stylesheet" href="realstyles/base.css">
+    <link rel="stylesheet" href="realstyles/common.css">
+    <link rel="stylesheet" href="realstyles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main id="main">
+        <h1 class="main__title title--h1">Mar De Miçangass</h1>
+        <form id="form--signin" action="">
+            <div>
+                <div class="flex-row-center">
+                    <ion-icon class="form__icon icon--title" name="enter-outline"></ion-icon>
+                    <h2 class="form__h2">Faça seu cadastro</h2>
+                </div>
+                <p class="form__p">Preencha os campos para cadastrar-se</p>
+            </div>
+            <label class="form__label" for="">
+                <fieldset class="form__fieldset">
+                    <legend>Usuario</legend>
+                    <ion-icon class="fieldset__icon" name="person"></ion-icon>
+                    <input class="fieldset__input" placeholder="Digite seu nome de usuario" type="text" id="username_input">
+                </fieldset>
+            </label>
+            <label class="form__label" for="">
+                <fieldset class="form__fieldset">
+                    <legend>E-mail</legend>
+                    <ion-icon class="fieldset__icon" name="mail-outline"></ion-icon>
+                    <input class="fieldset__input" placeholder="Digite seu e-mail" type="email" id="email_input">
+                </fieldset>
+            </label>
+            <label class="form__label" for="">
+                <fieldset class="form__fieldset">
+                    <legend>Senha</legend>
+                    <ion-icon class="fieldset__icon" name="lock-closed-outline"></ion-icon>
+                    <input class="fieldset__input" placeholder="Digite sua senha" type="password" id="password_input">
+                    <ion-icon class="fieldset__icon icon--eye" id="view_password" name="eye-outline"></ion-icon>
+                </fieldset>
+            </label>
+            <label class="form__label" for="">
+                <fieldset class="form__fieldset">
+                    <legend>Confirmar senha</legend>
+                    <ion-icon class="fieldset__icon" name="lock-closed-outline"></ion-icon>
+                    <input class="fieldset__input" placeholder="Digite sua senha novamente" type="password" id="confirm-password_input">
+                    <ion-icon class="fieldset__icon icon--eye" id="view_confirm-password" name="eye-outline"></ion-icon>
+                </fieldset class="form__fieldset">
+            </label>
+            <p id="error-sucess_menssage"></p>
+            <button class="form__button" type="button" id="signin_btn">REGISTRAR</button>
+            <p class="form__p p--bottom">Já tem uma conta? <a class="form__a" href="login.html">Entrar</a></p>
+        </form>
+    </main>
+    <div class="right-img"></div>
+
+    <script src="sign-in.js" type="module"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

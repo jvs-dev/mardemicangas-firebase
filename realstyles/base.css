@@ -1,0 +1,14 @@
+:root {
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632;
+    --black: #000;
+    --white: #fff;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Poppins', sans-serif;
+}

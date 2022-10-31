@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mar de Miçangas Salvador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="realstyles/perfil/perfil.css">
+    <link rel="stylesheet" href="realstyles/base.css">
+    <link rel="stylesheet" href="realstyles/reset.css">
+    <link rel="stylesheet" href="realstyles/common.css">
+</head>
+
+<body>
+    <main id="main">
+        <header class="main__header">
+            <h1 class="main__title title--h1">Mar De Miçangass</h1>
+            <nav class="header__nav">
+                <a href="" class="nav__icon">
+                    <ion-icon name="cart"></ion-icon>
+                </a>
+                <a href="" class="nav__icon">
+                    <ion-icon name="notifications"></ion-icon>
+                </a>
+                <a href="" class="nav__icon">
+                    <ion-icon name="heart"></ion-icon>
+                </a>
+                <a href=""><img id="user-img"></img></a>
+            </nav>
+        </header>
+        <form action="" class="main__form form--edit-perfil">
+            <ion-icon id="form--edit-perfil__close--form" name="close-circle-outline"></ion-icon>
+            <h2 class="main__title title--h2 title--h2--top">Editar perfil</h2>
+            <img id="form--edit-perfil__img" src="" alt="">
+
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">Trocar imagem de perfil</legend>
+                <ion-icon class="form--edit-perfil__icon" name="camera-outline"></ion-icon>
+                <input placeholder="Digite o url da imagen" class="form--edit-perfil__input" id="choose_img_url" type="url">
+            </fieldset>
+            <div class="form--edit-perfil__edit-name">
+                <ion-icon class="edit-name__icon" name="pencil-sharp"></ion-icon>
+                <input id="form--edit-perfil__username" type="text">
+            </div>
+            <hr class="form--edit-perfil__hr">
+            <h2 class="main__title title--h2">Informaçoes adicionais</h2>
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">CEP</legend>
+                <ion-icon class="form--edit-perfil__icon" name="map-outline"></ion-icon>
+                <input placeholder="Digite seu CEP" class="form--edit-perfil__input" id="add-cep_number" type="text">
+            </fieldset>
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">Bairro</legend>
+                <ion-icon class="form--edit-perfil__icon" name="location-outline"></ion-icon>
+                <input placeholder="Digite seu bairro" class="form--edit-perfil__input" id="add-district_name" type="text">
+            </fieldset>
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">Nome da rua</legend>
+                <ion-icon class="form--edit-perfil__icon" name="navigate-circle-outline"></ion-icon>
+                <input placeholder="Digite o nome da sua rua" class="form--edit-perfil__input" id="add-street_name" type="text">
+            </fieldset>
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">Numero</legend>
+                <ion-icon class="form--edit-perfil__icon" name="locate-outline"></ion-icon>
+                <input placeholder="Digite o número da casa" class="form--edit-perfil__input" id="add-house_number" type="number">
+            </fieldset>
+            <fieldset class="form--edit-perfil__fieldset">
+                <legend class="form--edit-perfil__legend">Telefone</legend>
+                <ion-icon class="form--edit-perfil__icon" name="call-outline"></ion-icon>
+                <input placeholder="Digite seu número de telefone" class="form--edit-perfil__input" id="add-phone_number" type="tel">
+            </fieldset>
+                <button id="form--edit-perfil__button--save" type="button">Salvar</button>
+                <p id="write_alert"></p>
+        </form>
+        <nav class="main__nav">
+            <a href="index.html" class="main__nav__a">
+                <ion-icon class="main__nav__icon" name="return-up-back-outline"></ion-icon>
+                Voltar
+            </a>
+            <a href="" class="main__nav__a">
+                <ion-icon class="main__nav__icon" name="help-circle-outline"></ion-icon>
+                Ajuda
+            </a>
+            <button type="button" id="button__disconnect">
+                <ion-icon class="main__nav__icon" name="exit-outline"></ion-icon>
+                Sair
+            </button>
+        </nav>
+        <section class="main__section section--edit-perfil">
+            <ion-icon id="edit-perfil" name="pencil-sharp"></ion-icon>
+            <img id="edit-perfil__img" alt="">
+            <h2 id="edit-perfil__username"></h2>
+            <div class="edit-perfil__div">
+                <ion-icon class="edit-perfil__icon" name="location-sharp"></ion-icon>
+                <p class="edit-perfil__p" id="address">Endereço não registrado</p>
+            </div>
+            <div class="edit-perfil__div">
+                <ion-icon class="edit-perfil__icon" name="call-sharp"></ion-icon>
+                <p class="edit-perfil__p" id="phone_number">Telefone não registrado</p>
+            </div>
+        </section>
+
+
+        <section class="main__section section--edit-data">
+            <h2 class="edit-data__title">Segurança</h2>
+            <fieldset class="edit-data__fieldset">
+                <legend class="edit-data__legend">Email</legend>
+                <ion-icon class="edit-data__icon" name="mail-outline"></ion-icon>
+                <input class="edit-data__input" id="edit-data__email" type="email" disabled>
+            </fieldset>
+            <button class="edit-data__button" type="button">Alterar email</button>
+            <fieldset class="edit-data__fieldset">
+                <legend class="edit-data__legend">Senha</legend>
+                <ion-icon class="edit-data__icon" name="lock-closed-outline"></ion-icon>
+                <input class="edit-data__input" id="edit-data__password" type="password" value="********" disabled>
+            </fieldset>
+            <button class="edit-data__button" type="button">Alterar senha</button>
+
+
+            <button id="delet-account" type="button">Apagar conta</button>
+        </section>
+    </main>
+
+
+    <script type="module" src="perfil.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
