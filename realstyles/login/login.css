@@ -201,7 +201,7 @@ fieldset.form__fieldset:has(> input.fieldset__input:focus)  {
         padding: 20px 0px;
     }
     .main__nav {
-        position: fixed;
+        position: absolute;
         bottom: 0;
     }
     .form__h2 {
