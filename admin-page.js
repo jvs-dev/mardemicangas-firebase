@@ -14,27 +14,7 @@ import { getFirestore, collection, doc, setDoc, addDoc, getDocs, query, where, g
 const db = getFirestore(app);
 const auth = getAuth();
 const user = auth.currentUser;
-var more_buy_lef_btn = document.getElementById("more-buy__left--btn")
-var more_buy_right_btn = document.getElementById("more-buy__right--btn")
-var section_more_buy = document.getElementById("section--more-buy")
 var user_img_content = document.getElementById("user-img")
-var heart_add = document.getElementById("heart-add")
-var fav_addprod = document.getElementById("fav-addprod")
-
-var scroll_x = 0
-
-more_buy_lef_btn.onclick = function () {
-  if (scroll_x > 0) {
-    scroll_x = scroll_x - 400
-    section_more_buy.scroll(scroll_x, 0)
-  }
-}
-more_buy_right_btn.onclick = function () {
-  if (scroll_x < 2600) {
-    scroll_x = scroll_x + 400
-    section_more_buy.scroll(scroll_x, 0)
-  }
-}
 
 const querySnapshot = await getDocs(collection(db, "users"));
 onAuthStateChanged(auth, (user) => {
@@ -53,8 +33,8 @@ onAuthStateChanged(auth, (user) => {
       if (objdata.email == user.email) {
         user_img_content.src = `${objdata.user_photo}`
         if (objdata.admin == true) {
-          heart_add.name = "add-circle"
-          fav_addprod.href = "admin-page.html"
+        } else {
+            window.location.href="index.html"
         }
       }
     })
@@ -62,4 +42,3 @@ onAuthStateChanged(auth, (user) => {
     window.location.href = "login.html"
   }
 });
-

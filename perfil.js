@@ -31,6 +31,8 @@ var form_edit_perfil_button_save = document.getElementById("form--edit-perfil__b
 var address = document.getElementById("address")
 var phone_number = document.getElementById("phone_number")
 var write_alert = document.getElementById("write_alert")
+var heart_add = document.getElementById("heart-add")
+var fav_addprod = document.getElementById("fav-addprod")
 
 
 const querySnapshot = await getDocs(collection(db, "users"));
@@ -83,6 +85,10 @@ onAuthStateChanged(auth, (user) => {
         form_edit_perfil_username.value = `${objdata.username}`
         phone_number.textContent = `${phone_number_exist()}`
         address.innerHTML = `${address_exist()}`
+        if (objdata.admin == true) {
+          heart_add.name = "add-circle"
+          fav_addprod.href = "admin-page.html"
+        }
       }
     })
   } else {

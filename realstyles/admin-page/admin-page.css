@@ -1,0 +1,85 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+}
+.main__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--form-background);
+    padding: 10px 40px;
+}
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+.main__title {
+    color: var(--text-title);
+}
+.title--h1 {
+    font-family: 'Irish Grover', cursive;
+}
+#user-img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: solid 2px var(--primary-color);
+    margin-left: 10px;
+    padding: 2px;
+}
+.nav__icon {
+    color: var(--white);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 10px 10px 0px 10px;
+    font-size: 2em;
+}
+
+.title--h2 {
+    font-size: 30px;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 40px 0px;
+}
+
+.article--product {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--form-background);
+    width: 300px;
+    height: 450px;
+    margin: 40px;
+}
+.product__img {
+    background-color: var(--white);
+    width: 300px;
+    height: 300px;
+}
+.product__description {
+    color: var(--white);
+    font-size: 19px;
+    height: 100%;
+    margin: 5px 15px 0px 15px;
+}
+.product__price {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 400;
+}
+.product__likes {
+    color: var(--white);
+    font-size: 19px;
+}
+.product__div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 15px;
+}
+
+.nav__icon:hover {
+    transform: scale(1.1);
+}

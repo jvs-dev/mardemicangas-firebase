@@ -152,11 +152,12 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     padding: 2px;
 }
 .nav__icon {
-    font-size: 40px;
     color: var(--white);
     cursor: pointer;
     text-decoration: none;
     margin: 10px 10px 0px 10px;
+    font-size: 2em;
+    transition: 0.5s;
 }
 
 .main__nav {
@@ -319,6 +320,11 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
 #write_alert {
     color: #00ff00;
 }
+
+.nav__icon:hover {
+    transform: scale(1.1);
+}
+
 @keyframes infinit_rotate {
     0% {
         rotate: 0deg;

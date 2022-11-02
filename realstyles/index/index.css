@@ -36,6 +36,7 @@
     cursor: pointer;
     text-decoration: none;
     margin: 10px 10px 0px 10px;
+    font-size: 2em;
 }
 .label--search {
     display: flex;
@@ -186,7 +187,6 @@
     border-radius: 9px;
 }
 .nav__icon {
-    font-size: 30px;
     transition: 0.5s;
     margin: 0px 10px;
 }
