@@ -20,6 +20,36 @@ var section_more_buy = document.getElementById("section--more-buy")
 var user_img_content = document.getElementById("user-img")
 var heart_add = document.getElementById("heart-add")
 var fav_addprod = document.getElementById("fav-addprod")
+var all_products_section = document.getElementById("all_products_section")
+
+
+
+const productsquerySnapshot = await getDocs(collection(db, "products"));
+
+
+productsquerySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  /*console.log(doc.id, " => ", doc.data());*/
+  let srtingdata = JSON.stringify(doc.data());
+  let objdata = JSON.parse(srtingdata)
+
+
+  let article = document.createElement("article")
+  let span_delete = document.createElement("span")
+  span_delete.classList.add("product__span")
+  all_products_section.insertAdjacentElement("afterbegin", article)
+  article.classList.add("article--product")
+  article.innerHTML = `
+      <img class="product__img" src="${objdata.product_image}" alt="" id="preview_image">
+      <p class="product__description" id="preview_description">${objdata.product_description}</p>
+      <div class="product__div">
+        <span class="product__price" id="preview_price">R$ ${objdata.product_price}</span>
+        <span class="product__likes">${objdata.likes} Likes</span>
+      </div>
+    `
+})
+
+
 
 var scroll_x = 0
 

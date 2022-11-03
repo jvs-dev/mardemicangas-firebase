@@ -171,6 +171,7 @@
     background-color: var(--form-background);
     width: 100%;
     align-items: center;
+    margin-top: 40px;
 }
 .footer__nav {
     display: flex;
