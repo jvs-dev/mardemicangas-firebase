@@ -237,3 +237,44 @@ fieldset.form__fieldset:has(> input.fieldset__input:focus)  {
 .error {
     color: red;
 }
+
+@media only screen and (max-width: 820px) {
+    .main__row-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: unset;
+        padding: 0px 20px;
+
+    }
+    .main__header {
+        padding: 10px 20px;
+        justify-content: flex-end;
+    }
+    .title--h1 {
+        display: none;
+    }
+    .main__form {
+        width: 100%;
+        padding: 20px;
+    }
+    .title--h2 {
+        font-size: 23px;
+    }
+    #section__products-added {
+        display: flex;
+        width: 100%;
+        padding: 40px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .article--product {
+        margin: 20px;
+    }
+    .form__button {
+        margin-bottom: 20px;
+    }
+    #user-img {
+        width: 50px;
+        height: 50px;
+    }
+}

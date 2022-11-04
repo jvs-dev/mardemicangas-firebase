@@ -338,6 +338,26 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     .main__nav {
         position: unset;
         align-self: baseline;
-        margin: 0px 0px 40px 40px;
+        margin: 0px 0px 0px 20px;
+    }
+    .title--h1 {
+        display: none;
+    }
+    #user-img {
+        width: 50px;
+        height: 50px;
+    }
+    .main__header {
+        padding: 10px 20px;
+        justify-content: flex-end;
+    }
+    .main__section {
+        width: 100%;
+        padding: 20px;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+    .edit-data__fieldset {
+        width: 100%;
     }
 }
