@@ -19,13 +19,57 @@
 </head>
 
 <body>
+    <section id="help_section_products" class="add-product-help-section">
+        <ion-icon id="product-help-section__close-btn" name="close-circle-outline"></ion-icon>
+        <h1 class="product-help-section__h1">
+            <ion-icon class="product-help-section__icon" name="help-circle-outline"></ion-icon>Ajuda
+        </h1>
+        <dl class="product-help-section__dl">
+            <dt class="product-help-section__dt">Como adicionar um produto?</dt>
+            <dd class="product-help-section__dd">
+                Primeiro preencha os formulários corretamente com o que se pede.
+                após preenche-los confira o preview do card do seu produto para ter certeza que não teve nenhum
+                problema.
+                após confirmar o card clique no botão de “Adicionar” no formlario e não feche a página até ter uma
+                resposta e seu produto será adicionado ao site.
+            </dd>
+        </dl>
+        <dl class="product-help-section__dl">
+            <dt class="product-help-section__dt">O que não fazer?</dt>
+            <dd class="product-help-section__dd">
+                Não preencha o formulario da imagem com dados que não sejam links validos e publicos para não causar
+                nenhum problema no upload na imagem. Para transformar sua imagem em um link válido clique <a href="https://www.aconvert.com/pt/image/">aqui</a>.
+                Não é necessario colocar espaços ou “R$” no formulario de preços pois já são adicionados
+                automaticamente.
+                Não feche a pagina ao adicionar o produto ou pode causar falha na adição do seu produto no banco de
+                dados do site.
+            </dd>
+        </dl>
+        <dl class="product-help-section__dl">
+            <dt class="product-help-section__dt">Porque meu produto
+                não foi adicionado?</dt>
+            <dd class="product-help-section__dd">
+                Má conecção com a internet ou limite de produtos atingidos podem ser algumas das causas da falha na
+                adição do seu produto.
+                conecte-se a uma rede estavel e tente novamente.
+            </dd>
+        </dl>
+        <dl class="product-help-section__dl">
+            <dt class="product-help-section__dt">Porque meu produto
+                não foi removido?</dt>
+            <dd class="product-help-section__dd">
+                Caso você remova o produto e recarregue ou feche a página você pode acabar gerando uma falha na
+                tentativa de exclusão do produto no banco de dados do site
+                Má conexão com a internet também pode ser uma das causas da falha na exclusão dos produtos.
+                conecte-se a uma rede estavel e tente novamente.
+            </dd>
+        </dl>
+    </section>
     <main id="main">
         <header class="main__header">
             <h1 class="main__title title--h1">Mar De Miçangass</h1>
             <nav class="header__nav">
-                <a href="" class="nav__icon">
-                    <ion-icon name="sunny"></ion-icon>
-                </a>
+                <ion-icon id="light-dark" class="nav__icon" name="sunny"></ion-icon>
                 <a href="" class="nav__icon">
                     <ion-icon name="notifications"></ion-icon>
                 </a>
@@ -39,7 +83,7 @@
             <form class="main__form" action="">
                 <div class="form__div">
                     <h2 class="title--h2">Adicionar produto</h2>
-                    <ion-icon name="help-circle-outline" id="add-product-help"></ion-icon>
+                    <ion-icon name="help-circle-outline" id="add-product-help-btn"></ion-icon>
                 </div>
                 <p class="form__p">Preencha os campos adicionar um produto</p>
                 <fieldset class="form__fieldset">
@@ -55,7 +99,8 @@
                 <fieldset class="form__fieldset">
                     <legend class="fieldset__legend">Descrição</legend>
                     <ion-icon class="fieldset__icon" name="list-outline"></ion-icon>
-                    <input class="fieldset__input" type="text" placeholder="Digite uma descrição" id="product_description">
+                    <input class="fieldset__input" type="text" placeholder="Digite uma descrição"
+                        id="product_description">
                 </fieldset>
                 <p id="console_menssage"></p>
                 <button class="form__button" id="add_product" type="button">Adicionar</button>

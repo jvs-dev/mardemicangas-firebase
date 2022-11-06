@@ -33,6 +33,35 @@ var phone_number = document.getElementById("phone_number")
 var write_alert = document.getElementById("write_alert")
 var heart_add = document.getElementById("heart-add")
 var fav_addprod = document.getElementById("fav-addprod")
+var open_help_section = document.getElementById("perfil-help-section__open-btn")
+var close_help_section = document.getElementById("perfil-help-section__close-btn")
+var help_section = document.getElementById("help_section_perfil")
+var light_dark = document.getElementById("light-dark")
+
+light_dark.onclick = function () {
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark")
+    light_dark.name="sunny" 
+  } else {
+    body.classList.add("dark")
+    light_dark.name="moon" 
+  }
+}
+
+open_help_section.onclick = function () {
+  help_section.style.display="flex"
+  body.style.overflow="hidden"
+}
+
+close_help_section.onclick = function () {
+  help_section.style.display="none"
+  body.style.overflow="auto"
+}
+
+
+
+
+
 
 
 const querySnapshot = await getDocs(collection(db, "users"));

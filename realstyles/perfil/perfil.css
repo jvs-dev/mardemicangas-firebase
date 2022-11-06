@@ -5,6 +5,69 @@
     background-color: var(--background);
     min-height: 100vh;
 }
+
+
+.perfil-help-section {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background);
+    z-index: 10;
+    overflow: auto;
+    padding: 40px;
+}
+#perfil-help-section__close-btn {
+    position: absolute;
+    font-size: 40px;
+    color: var(--white);
+    margin: 40px 40px 0px 0px;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.perfil-help-section__h1 {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin: 0px 0px 20px 0px;
+}
+.perfil-help-section__icon {
+    font-size: 35px;
+    margin-right: 5px;
+}
+.perfil-help-section__dl {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--white);
+    width: 100%;
+    margin: 20px 0px;
+}
+.perfil-help-section__dt {
+    font-size: 30px;
+    font-weight: 600;
+}
+.perfil-help-section__dd {
+    margin: 20px 0px 0px 0px;
+    font-size: 20px;
+}
+
+#perfil-help-section__open-btn {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
 .main__header {
     width: 100%;
     display: flex;
@@ -109,6 +172,9 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     cursor: pointer;
 }
 #form--edit-perfil__close--form {
+    right: 0;
+    top: 0px;
+    margin: 40px 40px 0px 0px;
     font-size: 40px;
     color: var(--white);
     align-self: baseline;
@@ -155,9 +221,10 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     color: var(--white);
     cursor: pointer;
     text-decoration: none;
-    margin: 10px 10px 0px 10px;
+    margin: 0px 10px 0px 10px;
     font-size: 2em;
     transition: 0.5s;
+    display: flex;
 }
 
 .main__nav {
@@ -359,5 +426,14 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     }
     .edit-data__fieldset {
         width: 100%;
+    }
+    .form--edit-perfil__fieldset {
+        width: 100%;
+    }
+    .form--edit-perfil {
+        padding: 20px;
+    }
+    #form--edit-perfil__close--form {
+        margin: 20px 20px 0px 0px;
     }
 }

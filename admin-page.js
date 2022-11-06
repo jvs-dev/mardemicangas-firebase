@@ -14,6 +14,7 @@ import { getFirestore, collection, doc, setDoc, addDoc, getDocs, query, where, g
 const db = getFirestore(app);
 const auth = getAuth();
 const user = auth.currentUser;
+var body = document.querySelector("body")
 var user_img_content = document.getElementById("user-img")
 var preview_image = document.getElementById("preview_image")
 var preview_price = document.getElementById("preview_price")
@@ -21,6 +22,31 @@ var preview_description = document.getElementById("preview_description")
 var add_product = document.getElementById("add_product")
 var console_menssage = document.getElementById("console_menssage")
 var section_products_added = document.getElementById("section__products-added")
+var open_help_section = document.getElementById("add-product-help-btn")
+var close_help_section = document.getElementById("product-help-section__close-btn")
+var help_section = document.getElementById("help_section_products")
+var light_dark = document.getElementById("light-dark")
+
+light_dark.onclick = function () {
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark")
+    light_dark.name="sunny" 
+  } else {
+    body.classList.add("dark")
+    light_dark.name="moon" 
+  }
+}
+
+
+open_help_section.onclick = function () {
+  help_section.style.display="flex"
+  body.style.overflow="hidden"
+}
+
+close_help_section.onclick = function () {
+  help_section.style.display="none"
+  body.style.overflow="auto"
+}
 
 
 add_product.onclick = function () {
@@ -127,7 +153,7 @@ productsquerySnapshot.forEach((doc) => {
   span_delete.classList.add("product__span")
   section_products_added.insertAdjacentElement("afterbegin", article)
   article.classList.add("article--product")
-  article.id=`${doc.id}`
+  article.id = `${doc.id}`
   article.innerHTML = `
       <img class="product__img" src="${objdata.product_image}" alt="" id="preview_image">
       <p class="product__description" id="preview_description">${objdata.product_description}</p>
@@ -136,16 +162,16 @@ productsquerySnapshot.forEach((doc) => {
         <span class="product__likes">${objdata.likes} Likes</span>
       </div>
     `
-    article.insertAdjacentElement("afterbegin", span_delete)
-    span_delete.innerHTML=`<ion-icon class="product__delete-icon" name="trash-outline"></ion-icon>`
-    span_delete.onclick = function () {
-      var this_product = this.parentNode
-      let product_id = this_product.id
-      deletedoc(product_id)
-      this_product.classList.add("dpnone")
-    }
+  article.insertAdjacentElement("afterbegin", span_delete)
+  span_delete.innerHTML = `<ion-icon class="product__delete-icon" name="trash-outline"></ion-icon>`
+  span_delete.onclick = function () {
+    var this_product = this.parentNode
+    let product_id = this_product.id
+    deletedoc(product_id)
+    this_product.classList.add("dpnone")
+  }
 
-}) 
+})
 
 
 function deletedoc(product_id) {

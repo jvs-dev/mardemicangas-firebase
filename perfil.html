@@ -20,12 +20,58 @@
 
 <body>
     <main id="main">
+        <section id="help_section_perfil" class="perfil-help-section">
+            <ion-icon id="perfil-help-section__close-btn" name="close-circle-outline"></ion-icon>
+            <h1 class="perfil-help-section__h1">
+                <ion-icon class="perfil-help-section__icon" name="help-circle-outline"></ion-icon>Ajuda
+            </h1>
+            <dl class="perfil-help-section__dl">
+                <dt class="perfil-help-section__dt">Como mudar minha senha?</dt>
+                <dd class="perfil-help-section__dd">
+                    Na parte de baixo da página “perfil” você vera um formulario “Segurança” com seu email e senha.
+                    Ao clicar no botão “Alterar senha” enviaremos um email para você mudar sua senha.
+                    fique atento a caixa de span, o email pode chegar lá.
+                </dd>
+            </dl>
+            <dl class="perfil-help-section__dl">
+                <dt class="perfil-help-section__dt">Como mudar meu email?</dt>
+                <dd class="perfil-help-section__dd">
+                    Na parte de baixo da página “perfil” você vera um formulario “Segurança” com seu email e senha.
+                    Ao clicar no botão “Alterar email” enviaremos um email para você atualizar seu email cadastrado.
+                    fique atento a caixa de span, o email pode chegar lá.
+                </dd>
+            </dl>
+            <dl class="perfil-help-section__dl">
+                <dt class="perfil-help-section__dt">Como cadastrar meu endereço e numero de telefone?</dt>
+                <dd class="perfil-help-section__dd">
+                    Na página “perfil” clique em um lapis ao lado da sua foto de perfil.
+                    abaixo de “Editar perfil” você verá um formulário “Informaçoes adicionais” para adicionar suas
+                    informações como telefone e endereço.
+                    Após preencher o formulario clique em “Salvar” para confirmar as mudanças feitas.
+                </dd>
+            </dl>
+            <dl class="perfil-help-section__dl">
+                <dt class="perfil-help-section__dt">Como trocar minha foto de perfil?</dt>
+                <dd class="perfil-help-section__dd">
+                    Na página “perfil” clique em um lapis ao lado da sua foto de perfil.
+                    No formulário “Editar perfil” você verá um campo para colocar o link da sua imagem de perfil
+                    AVISO: Você deve inserir um link publico e valido para o site não ter problemas ao exibir sua foto
+                    de perfil.
+                    Você pode transformar sua foto em um link clicando <a href="https://www.aconvert.com/pt/image/">aqui</a>.
+                </dd>
+            </dl>
+            <dl class="perfil-help-section__dl">
+                <dt class="perfil-help-section__dt">Como apagar minha conta?</dt>
+                <dd class="perfil-help-section__dd">
+                    Na parte de baixo da página “perfil” você vera um formulario “Segurança” com seu email e senha.
+                    Ao clicar no botão “Apagar conta” todos os seus dados serão apagados e sua conta será excluida.
+                </dd>
+            </dl>
+        </section>
         <header class="main__header">
             <h1 class="main__title title--h1">Mar De Miçangass</h1>
             <nav class="header__nav">
-                <a href="" class="nav__icon">
-                    <ion-icon name="sunny"></ion-icon>
-                </a>
+                    <ion-icon id="light-dark" class="nav__icon" name="sunny"></ion-icon>
                 <a href="" class="nav__icon">
                     <ion-icon name="notifications"></ion-icon>
                 </a>
@@ -43,7 +89,8 @@
             <fieldset class="form--edit-perfil__fieldset">
                 <legend class="form--edit-perfil__legend">Trocar imagem de perfil</legend>
                 <ion-icon class="form--edit-perfil__icon" name="camera-outline"></ion-icon>
-                <input placeholder="Digite o url da imagen" class="form--edit-perfil__input" id="choose_img_url" type="url">
+                <input placeholder="Digite o url da imagen" class="form--edit-perfil__input" id="choose_img_url"
+                    type="url">
             </fieldset>
             <div class="form--edit-perfil__edit-name">
                 <ion-icon class="edit-name__icon" name="pencil-sharp"></ion-icon>
@@ -59,35 +106,39 @@
             <fieldset class="form--edit-perfil__fieldset">
                 <legend class="form--edit-perfil__legend">Bairro</legend>
                 <ion-icon class="form--edit-perfil__icon" name="location-outline"></ion-icon>
-                <input placeholder="Digite seu bairro" class="form--edit-perfil__input" id="add-district_name" type="text">
+                <input placeholder="Digite seu bairro" class="form--edit-perfil__input" id="add-district_name"
+                    type="text">
             </fieldset>
             <fieldset class="form--edit-perfil__fieldset">
                 <legend class="form--edit-perfil__legend">Nome da rua</legend>
                 <ion-icon class="form--edit-perfil__icon" name="navigate-circle-outline"></ion-icon>
-                <input placeholder="Digite o nome da sua rua" class="form--edit-perfil__input" id="add-street_name" type="text">
+                <input placeholder="Digite o nome da sua rua" class="form--edit-perfil__input" id="add-street_name"
+                    type="text">
             </fieldset>
             <fieldset class="form--edit-perfil__fieldset">
                 <legend class="form--edit-perfil__legend">Numero</legend>
                 <ion-icon class="form--edit-perfil__icon" name="locate-outline"></ion-icon>
-                <input placeholder="Digite o número da casa" class="form--edit-perfil__input" id="add-house_number" type="number">
+                <input placeholder="Digite o número da casa" class="form--edit-perfil__input" id="add-house_number"
+                    type="number">
             </fieldset>
             <fieldset class="form--edit-perfil__fieldset">
                 <legend class="form--edit-perfil__legend">Telefone</legend>
                 <ion-icon class="form--edit-perfil__icon" name="call-outline"></ion-icon>
-                <input placeholder="Digite seu número de telefone" class="form--edit-perfil__input" id="add-phone_number" type="tel">
+                <input placeholder="Digite seu número de telefone" class="form--edit-perfil__input"
+                    id="add-phone_number" type="tel">
             </fieldset>
-                <button id="form--edit-perfil__button--save" type="button">Salvar</button>
-                <p id="write_alert"></p>
+            <button id="form--edit-perfil__button--save" type="button">Salvar</button>
+            <p id="write_alert"></p>
         </form>
         <nav class="main__nav">
             <a href="index.html" class="main__nav__a">
                 <ion-icon class="main__nav__icon" name="return-up-back-outline"></ion-icon>
                 Voltar
             </a>
-            <a href="" class="main__nav__a">
+            <p id="perfil-help-section__open-btn" class="main__nav__a">
                 <ion-icon class="main__nav__icon" name="help-circle-outline"></ion-icon>
                 Ajuda
-            </a>
+            </p>
             <button type="button" id="button__disconnect">
                 <ion-icon class="main__nav__icon" name="exit-outline"></ion-icon>
                 Sair

@@ -14,6 +14,7 @@ import { getFirestore, collection, doc, setDoc, addDoc, getDocs, query, where, g
 const db = getFirestore(app);
 const auth = getAuth();
 const user = auth.currentUser;
+var body = document.querySelector("body")
 var more_buy_lef_btn = document.getElementById("more-buy__left--btn")
 var more_buy_right_btn = document.getElementById("more-buy__right--btn")
 var section_more_buy = document.getElementById("section--more-buy")
@@ -23,7 +24,17 @@ var fav_addprod = document.getElementById("fav-addprod")
 var all_products_section = document.getElementById("all_products_section")
 var search_section = document.getElementById("search-section")
 var search_btn = document.getElementById("search_btn")
+var light_dark = document.getElementById("light-dark")
 
+light_dark.onclick = function () {
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark")
+    light_dark.name="sunny" 
+  } else {
+    body.classList.add("dark")
+    light_dark.name="moon" 
+  }
+}
 
 
 const productsquerySnapshot = await getDocs(collection(db, "products"));

@@ -7,7 +7,15 @@
     --black: #000;
     --white: #fff;
 }
-
+.dark {
+ --text-base: rgb(65, 65, 65);
+ --text-title: #d4ccb6;
+ --background: #fff;
+ --form-background: rgb(238, 238, 238);
+ --primary-color: #dac032;
+ --black: #000;
+ --white: #000;   
+}
 body {
     margin: 0px;
     font-family: 'Poppins', sans-serif;
