@@ -183,7 +183,7 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
 }
 #form--edit-perfil__button--save {
     background-color: var(--primary-color);
-    color: var(--background);
+    color: #191816;
     cursor: pointer;
     border: 0px;
     border-radius: 7px;
@@ -266,6 +266,7 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     border-radius: 7px;
     padding: 40px;
     margin-bottom: 40px;
+    border: solid 2px #191816;
 }
 #edit-perfil {
     color: var(--white);
@@ -333,7 +334,7 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
 .edit-data__button {
     background-color: var(--primary-color);
     cursor: pointer;
-    color: var(--background);
+    color: #191816;
     font-size: 18px;
     font-weight: 500;
     border: 0px;

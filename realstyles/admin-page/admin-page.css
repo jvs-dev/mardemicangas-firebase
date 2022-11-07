@@ -57,6 +57,8 @@
     width: 300px;
     height: 450px;
     margin: 40px;
+    border: solid 2px #191816;
+    border-radius: 7px;
 }
 .product__img {
     background-color: var(--white);
@@ -101,6 +103,8 @@
     flex-direction: column;
     padding: 40px;
     width: 40%;
+    border: solid 2px #191816;
+    border-radius: 7px;
 }
 
 
@@ -190,6 +194,7 @@ fieldset.form__fieldset:has(> input.fieldset__input:focus)  {
     width: 100%;
     padding: 40px;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .product__delete-icon {
     font-size: 40px;

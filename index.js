@@ -22,17 +22,27 @@ var user_img_content = document.getElementById("user-img")
 var heart_add = document.getElementById("heart-add")
 var fav_addprod = document.getElementById("fav-addprod")
 var all_products_section = document.getElementById("all_products_section")
-var search_section = document.getElementById("search-section")
+var search_section_products = document.getElementById("search-section-products")
+var search_section_users = document.getElementById("search-section-users")
 var search_btn = document.getElementById("search_btn")
 var light_dark = document.getElementById("light-dark")
 
+
+if (localStorage.page_theme == "light") {
+  body.classList.add("light")
+  light_dark.name = "moon"
+}
+
+
 light_dark.onclick = function () {
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark")
-    light_dark.name="sunny" 
+  if (body.classList.contains("light")) {
+    body.classList.remove("light")
+    light_dark.name = "sunny"
+    localStorage.page_theme = "dark"
   } else {
-    body.classList.add("dark")
-    light_dark.name="moon" 
+    body.classList.add("light")
+    light_dark.name = "moon"
+    localStorage.page_theme = "light"
   }
 }
 
@@ -89,8 +99,8 @@ onAuthStateChanged(auth, (user) => {
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
       /*console.log(doc.id, " => ", doc.data());*/
-      var srtingdata = JSON.stringify(doc.data());
-      var objdata = JSON.parse(srtingdata)
+      let srtingdata = JSON.stringify(doc.data());
+      let objdata = JSON.parse(srtingdata)
       if (objdata.email == user.email) {
         user_img_content.src = `${objdata.user_photo}`
         if (objdata.admin == true) {
@@ -106,8 +116,8 @@ onAuthStateChanged(auth, (user) => {
 
 
 search_btn.onclick = function () {
-  search_btn.innerHTML=`<div class="loading"><div class="loading__center"></div></div>`
-  search_section.innerHTML=""
+  search_btn.innerHTML = `<div class="loading"><div class="loading__center"></div></div>`
+  search_section_products.innerHTML = ""
   let input_search = document.getElementById("input-search").value
   let search = input_search.toUpperCase()
   if (input_search != "") {
@@ -116,11 +126,10 @@ search_btn.onclick = function () {
       /*console.log(doc.id, " => ", doc.data());*/
       let srtingdata = JSON.stringify(doc.data());
       let objdata = JSON.parse(srtingdata)
-      if (objdata.product_description.includes(`${search}`)) {
-        console.log("foi");
+      if (objdata.product_description.toUpperCase().includes(`${search}`)) {
 
         let article = document.createElement("article")
-        search_section.insertAdjacentElement("afterbegin", article)
+        search_section_products.insertAdjacentElement("afterbegin", article)
         article.classList.add("article--product")
         article.innerHTML = `
         <img class="product__img" src="${objdata.product_image}" alt="" id="preview_image">
@@ -132,13 +141,32 @@ search_btn.onclick = function () {
       `
       }
     })
+
+    querySnapshot.forEach((doc) => {
+      let srtingdata = JSON.stringify(doc.data());
+      let objdata = JSON.parse(srtingdata)
+      if (objdata.username.toUpperCase().includes(`${search}`)) {
+
+        let article = document.createElement("article")
+        search_section_users.insertAdjacentElement("afterbegin", article)
+        article.classList.add("article--user")
+        article.innerHTML = `
+          <img class="article--user__img" src="${objdata.user_photo}" alt="">
+          <div class="article--user__div">
+            <p class="article--user__username">${objdata.username}</p>
+            <p class="article--user__email">${objdata.email}</p>
+          </div>
+        `
+      }
+    })
   }
-  search_btn.innerHTML="Procurar"
+  search_btn.innerHTML = "Procurar"
 }
 
 setInterval(() => {
   let input_search = document.getElementById("input-search").value
   if (input_search == "") {
-    search_section.innerHTML=""
+    search_section_users.innerHTML = ""
+    search_section_products.innerHTML = ""
   }
 }, 1000);

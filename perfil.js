@@ -38,13 +38,22 @@ var close_help_section = document.getElementById("perfil-help-section__close-btn
 var help_section = document.getElementById("help_section_perfil")
 var light_dark = document.getElementById("light-dark")
 
+
+if (localStorage.page_theme == "light") {
+  body.classList.add("light")
+  light_dark.name = "moon"
+}
+
+
 light_dark.onclick = function () {
-  if (body.classList.contains("dark")) {
-    body.classList.remove("dark")
+  if (body.classList.contains("light")) {
+    body.classList.remove("light")
     light_dark.name="sunny" 
+    localStorage.page_theme = "dark"
   } else {
-    body.classList.add("dark")
-    light_dark.name="moon" 
+    body.classList.add("light")
+    light_dark.name="moon"
+    localStorage.page_theme = "light"
   }
 }
 
