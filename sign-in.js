@@ -60,7 +60,7 @@ signin_btn.onclick = function () {
             const user = userCredential.user;
             const usersRef = collection(db, "users");
             setDoc(doc(usersRef, `${email}`), {
-              email: `${email}`, username: `${username}`, user_photo: `https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png`
+              email: `${email}`, username: `${username}`, user_photo: `https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png`, products_liked: []
             });
             setTimeout(() => {
               signin_btn.innerHTML="ENTRAR"

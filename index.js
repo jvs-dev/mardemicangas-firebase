@@ -10,7 +10,7 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-import { getFirestore, collection, doc, setDoc, addDoc, getDocs, query, where, getDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, addDoc, getDocs, query, where, getDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 const db = getFirestore(app);
 const auth = getAuth();
 const user = auth.currentUser;
@@ -26,6 +26,19 @@ var search_section_products = document.getElementById("search-section-products")
 var search_section_users = document.getElementById("search-section-users")
 var search_btn = document.getElementById("search_btn")
 var light_dark = document.getElementById("light-dark")
+var product_page_section = document.getElementById("product_page_section")
+var close_product_page_section = document.getElementById("close_product_page_section")
+var img_product_page_section = document.getElementById("img_product_page_section")
+var description_product_page_section = document.getElementById("description_product_page_section")
+var price_product_page_section = document.getElementById("price_product_page_section")
+var likes_product_page_section = document.getElementById("likes_product_page_section")
+var heart_product_page_section = document.getElementById("heart_product_page_section")
+var button_product_page_section = document.getElementById("button_product_page_section")
+
+close_product_page_section.onclick = function () {
+  product_page_section.style.display = "none"
+  body.style.overflow = "auto"
+}
 
 
 if (localStorage.page_theme == "light") {
@@ -56,7 +69,6 @@ productsquerySnapshot.forEach((doc) => {
   let srtingdata = JSON.stringify(doc.data());
   let objdata = JSON.parse(srtingdata)
 
-
   let article = document.createElement("article")
   all_products_section.insertAdjacentElement("afterbegin", article)
   article.classList.add("article--product")
@@ -68,7 +80,69 @@ productsquerySnapshot.forEach((doc) => {
         <span class="product__likes">${objdata.likes} Likes</span>
       </div>
     `
+  article.id = `${doc.id}`
+  article.onclick = function () {
+    product_page_section.style.display = "flex"
+    img_product_page_section.src = `${objdata.product_image}`
+    description_product_page_section.textContent = `${objdata.product_description}`
+    price_product_page_section.textContent = `R$ ${objdata.product_price}`
+    likes_product_page_section.textContent = `${objdata.likes} Likes`
+    body.style.overflow = "hidden"
+    button_product_page_section.onclick = function () {
+      let product_color_1 = document.getElementById("product-color-1").value
+      let product_color_2 = document.getElementById("product-color-2").value
+      let product_size_1 = document.getElementById("product-size-1").value
+      let product_size_2 = document.getElementById("product-size-2").value
+      function optionalproduct() {
+        if (product_color_2 == "" && product_size_2 == "") {
+          return ""
+        } else {
+          return `Tamanho 2: ${product_size_2}, cor 2: ${product_color_1},`
+        }
+      }
+      window.location.href = `https://api.whatsapp.com/send?phone=55557185538434&text=Olá gostaria de fazer um pedido baseado no produto: ${objdata.product_description}. Tamanho 1: ${product_size_1}, cor 1: ${product_color_1}. ${optionalproduct()} ${by_address()}`
+    }
+    heart_product_page_section.onclick = function () {
+      likeanddislike(article.id, Number(objdata.likes))
+    }
+  }
 })
+
+function by_address() {
+  onAuthStateChanged(auth, (user) => {
+      querySnapshot.forEach((doc) => {
+        let srtingdata = JSON.stringify(doc.data());
+        let objdata = JSON.parse(srtingdata)
+        if (objdata.email == user.email) {
+          if (objdata.street_name && objdata.house_number && objdata.district_name && objdata.cep_number) {
+            return `${objdata.district_name}, ${objdata.street_name}, Nº${objdata.house_number}<br>${objdata.cep_number}`
+          } else {
+            return "Endereço não registrado"
+          }
+        }
+      })
+  });
+}
+
+function likeanddislike(id, numberoflikes) {
+
+  if (heart_product_page_section.name == "heart-outline") {
+    let thisproductRef = doc(db, "products", `${id}`);
+    updateDoc(thisproductRef, {
+      likes: numberoflikes + 1
+    });
+    likes_product_page_section.textContent = `${numberoflikes + 1} Likes`
+    heart_product_page_section.name = "heart-sharp"
+  } else {
+    let thisproductRef = doc(db, "products", `${id}`);
+    updateDoc(thisproductRef, {
+      likes: numberoflikes
+    });
+    likes_product_page_section.textContent = `${numberoflikes} Likes`
+    heart_product_page_section.name = "heart-outline"
+  }
+
+}
 
 
 

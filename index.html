@@ -20,6 +20,75 @@
 
 <body>
     <main id="main">
+        <section id="product_page_section">
+            <ion-icon id="close_product_page_section" name="close-outline"></ion-icon>
+            <figure class="figure_product_page_section">
+                <img id="img_product_page_section" src="" alt="">
+                <figcaption id="description_product_page_section"></figcaption>
+            </figure>
+            <span id="price_product_page_section"></span>
+            <div class="div_product_page_section">
+                <div class="flex-row-align-center">
+                    <ion-icon id="heart_product_page_section" name="heart-outline"></ion-icon>
+                    <span id="likes_product_page_section"></span>
+                </div>
+
+                <div class="flex-row-align-center">
+                    <div class="personalize_div">
+                        <h3>produto 1</h3>
+                        <select class="personalize_select" id="product-color-1">
+                            <option value="Branco">Branco</option>
+                            <option value="Preto">Preto</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Vermelho">Vermelho</option>
+                            <option value="Amarelo">Amarelo</option>
+                            <option value="Verde">Verde</option>
+                            <option value="Ciano">Ciano</option>
+                            <option value="Marrom">Marrom</option>
+                            <option value="Laranja">Laranja</option>
+                            <option value="Rosa">Rosa</option>
+                            <option value="Roxo">Roxo</option>
+                            <option value="Lilás">Lilás</option>
+
+                        </select>
+                        <select class="personalize_select" id="product-size-1">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+                    <div class="personalize_div">
+                        <h3>produto 2(opcional)</h3>
+                        <select class="personalize_select" id="product-color-2">
+                            <option value="" selected></option>
+                            <option value="Branco">Branco</option>
+                            <option value="Preto">Preto</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Vermelho">Vermelho</option>
+                            <option value="Amarelo">Amarelo</option>
+                            <option value="Verde">Verde</option>
+                            <option value="Ciano">Ciano</option>
+                            <option value="Marrom">Marrom</option>
+                            <option value="Laranja">Laranja</option>
+                            <option value="Rosa">Rosa</option>
+                            <option value="Roxo">Roxo</option>
+                            <option value="Lilás">Lilás</option>
+                        </select>
+                        <select class="personalize_select" id="product-size-2">
+                            <option value="" selected></option>
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                            <option value="GG">GG</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button href="" id="button_product_page_section">
+                <ion-icon class="product_page_section_icon-whatsapp" name="logo-whatsapp"></ion-icon>COMPRAR
+            </button>
+        </section>
         <header class="main__header">
             <h1 class="main__title title--h1">Mar De Miçangass</h1>
             <nav class="header__nav">
@@ -35,16 +104,14 @@
                 <a href="perfil.html"><img id="user-img"></img></a>
             </nav>
         </header>
-        <div class="search-div">
-            <label class="main__label label--search" for="input-search">
-                <ion-icon class="label--search--icon" name="search-sharp"></ion-icon>
-                <input id="input-search" type="search">
-            </label>
+        <label class="main__label label--search" for="input-search">
+            <ion-icon class="label--search--icon" name="search-sharp"></ion-icon>
+            <input id="input-search" type="search">
             <button type="button" id="search_btn">Procurar</button>
-        </div>
+        </label>
         <section class="main__section section--wrap" id="search-section-products">
         </section>
-        <section class="main__section section--wrap" id="search-section-users"> 
+        <section class="main__section section--wrap" id="search-section-users">
         </section>
         <h2 class="main__title title--h2">Categorias</h2>
         <nav class="main__nav nav--categories">

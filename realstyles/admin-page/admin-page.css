@@ -59,6 +59,7 @@
     margin: 40px;
     border: solid 2px #191816;
     border-radius: 7px;
+    cursor: pointer;
 }
 .product__img {
     background-color: var(--white);

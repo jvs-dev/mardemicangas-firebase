@@ -5,6 +5,101 @@
     background-color: var(--background);
 }
 
+#product_page_section {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    z-index: 20;
+    padding: 40px;
+}
+#close_product_page_section {
+    font-size: 40px;
+    color: var(--white);
+    cursor: pointer;
+    align-self: flex-end;
+    position: fixed;
+    margin-top: 40px;
+    top: 0;
+}
+.figure_product_page_section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+#img_product_page_section {
+    height: 40vh;
+}
+#description_product_page_section {
+    margin-top: 40px;
+    color: var(--white);
+    font-size: 22px;
+    width: 50vw;
+    text-align: center;
+}
+#price_product_page_section {
+    color: var(--primary-color);
+    font-size: 30px;
+    font-weight: 500;
+}
+#button_product_page_section {
+    background-color: #25D366;
+    color: white;
+    border: 0px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 25px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 20px;
+    transition: 0.5s;
+}
+#button_product_page_section:hover {
+    box-shadow: 0px 0px 10px #25D366;
+}
+.product_page_section_icon-whatsapp {
+    font-size: 30px;
+    margin-right: 5px;
+}
+.div_product_page_section {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+}
+#heart_product_page_section {
+    color: #ff0000;
+    cursor: pointer;
+    font-size: 40px;
+    margin-right: 20px;
+}
+#likes_product_page_section {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 500;
+}
+.personalize_div {
+    text-align: center;
+    margin: 0px 20px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 400;
+}
+.personalize_select {
+    background-color: var(--form-background);
+    color: var(--white);
+    border: solid 1px var(--white);
+}
+
 .main__header {
     width: 100%;
     display: flex;
@@ -51,10 +146,10 @@
     align-items: center;
     background-color: white;
     width: 50%;
-    border-radius: 7px 0px 0px 7px;
+    border-radius: 7px;
     padding: 2px 5px;
     border: 2px solid var(--white);
-    border-right: 0px;
+    margin-top: 40px;
 }
 
 #input-search {
@@ -71,9 +166,10 @@
 }
 
 .label--search--icon {
-    font-size: 20px;
+    font-size: 27px;
     color: #191816;
     text-decoration: none;
+    margin-right: 5px;
 }
 
 .nav--categories {
@@ -122,8 +218,9 @@
     width: 300px;
     height: 450px;
     margin: 40px;
-    border: solid 2px #191816;
+    border: solid 1px #191816;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .product__img {
@@ -167,25 +264,20 @@
 }
 #search_btn {
     background-color: var(--primary-color);
-    border: solid 2px var(--white);
+    border: 0px;
     outline-width: 0px;
     font-size: 20px;
     cursor: pointer;
     border-radius: 0px 7px 7px 0px;
     padding: 0px 20px;
-    height: 32px;
+    height: 100%;
     color: #191816;
+    margin-left: 5px;
 }
 #search-section-users, #search-section-products {
     min-height: 0px;
 }
-.search-div {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-}
+
 
 .section--carousel::-webkit-scrollbar {
     display: none;
