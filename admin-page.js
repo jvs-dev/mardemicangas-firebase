@@ -37,24 +37,24 @@ if (localStorage.page_theme == "light") {
 light_dark.onclick = function () {
   if (body.classList.contains("light")) {
     body.classList.remove("light")
-    light_dark.name="sunny" 
+    light_dark.name = "sunny"
     localStorage.page_theme = "dark"
   } else {
     body.classList.add("light")
-    light_dark.name="moon" 
+    light_dark.name = "moon"
     localStorage.page_theme = "light"
   }
 }
 
 
 open_help_section.onclick = function () {
-  help_section.style.display="flex"
-  body.style.overflow="hidden"
+  help_section.style.display = "flex"
+  body.style.overflow = "hidden"
 }
 
 close_help_section.onclick = function () {
-  help_section.style.display="none"
-  body.style.overflow="auto"
+  help_section.style.display = "none"
+  body.style.overflow = "auto"
 }
 
 
@@ -63,12 +63,14 @@ add_product.onclick = function () {
   let product_image = document.getElementById("product_image").value
   let product_price = document.getElementById("product_price").value
   let product_description = document.getElementById("product_description").value
+  let product_categorie = document.getElementById("product_categorie").value
   if (product_image != "" && product_price != "" && product_description != "") {
     const productsRef = collection(db, "products");
     setDoc(doc(productsRef), {
       product_image: `${product_image}`,
       product_price: `${product_price}`,
       product_description: `${product_description}`,
+      product_categorie: `${product_categorie}`,
       likes: 0
     });
     setTimeout(() => {

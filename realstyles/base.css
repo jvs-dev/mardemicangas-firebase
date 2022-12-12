@@ -1,18 +1,18 @@
 :root {
     --text-base: #afb6c2;
-    --text-title: #d4ccb6;
+    --text-title: #e91e63;
     --background: #191816;
     --form-background: #24221f;
-    --primary-color: #ffc632;
+    --primary-color: #e91e63;
     --black: #000;
     --white: #fff;
 }
 .light {
  --text-base: rgb(65, 65, 65);
- --text-title: #d4ccb6;
+ --text-title: #e91e63;
  --background: #fff;
- --form-background: #f3faff;
- --primary-color: #f7d100;
+ --form-background: #fff;
+ --primary-color: #e91e63;
  --black: #000;
  --white: #000;   
 }
