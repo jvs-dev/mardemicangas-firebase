@@ -330,4 +330,7 @@ body.light .article--product {
     .main__footer {
         justify-content: center;
     }
+    .section--wrap {
+        padding: 0px 0px;
+    }
 }
