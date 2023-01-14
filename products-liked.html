@@ -20,6 +20,11 @@
 
 <body>
     <main id="main">
+        <section id="loading_window">
+            <div class="load-background">
+                <div class="load-circle"></div>
+            </div>
+        </section>
         <section id="product_page_section">
             <ion-icon id="close_product_page_section" name="close-circle-outline"></ion-icon>
             <figure class="figure_product_page_section">
@@ -71,15 +76,19 @@
                 <a href="" class="nav__icon">
                     <ion-icon name="notifications"></ion-icon>
                 </a>
-                <a href="" class="nav__icon" id="fav-addprod">
-                    <ion-icon name="heart" id="heart-add"></ion-icon>
+                <a href="index.html" class="nav__icon">
+                    <ion-icon name="home"></ion-icon>
                 </a>
                 <a href="perfil.html"><img id="user-img"></img></a>
             </nav>
         </header>
-        <section id="products-liked">
+        
+        <h2 class="main__title title--h2">Produtos curtidos</h2>
+        <span id="section_message">Você ainda não curtiu nenhum produto</span>
+        <section class="main__section section--wrap" id="all_products_section">
 
         </section>
+        
         <footer class="main__footer">
             <div class="footer__div">
                 <ion-icon class="nav__icon icon--tell" name="call"></ion-icon>

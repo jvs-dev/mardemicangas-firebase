@@ -89,6 +89,7 @@ add_product.onclick = function () {
         <span class="product__likes">0 Likes</span>
       </div>
     `
+    clear_inputs()
     }, 1000);
   } else {
     setTimeout(() => {
@@ -187,4 +188,27 @@ productsquerySnapshot.forEach((doc) => {
 
 function deletedoc(product_id) {
   deleteDoc(doc(db, "products", `${product_id}`));
+}
+
+function clear_inputs() {
+  let product_image = document.getElementById("product_image")
+  let product_price = document.getElementById("product_price")
+  let product_description = document.getElementById("product_description")
+
+  product_image.value = ""
+  product_price.value = ""
+  product_description.value = ""
+}
+
+
+
+
+
+window.addEventListener("load", remove_loading_window())
+
+function remove_loading_window() {
+  setTimeout(() => {
+    let loading_window = document.getElementById("loading_window")
+    loading_window.style.display = "none"
+  }, 500);
 }

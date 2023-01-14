@@ -209,3 +209,18 @@ form_edit_perfil_button_save.onclick = function () {
     }
   })
 }
+
+
+
+
+
+
+
+window.addEventListener("load", remove_loading_window())
+
+function remove_loading_window() {
+  setTimeout(() => {
+    let loading_window = document.getElementById("loading_window")
+    loading_window.style.display = "none"
+  }, 500);
+}

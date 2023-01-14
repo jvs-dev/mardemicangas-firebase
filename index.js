@@ -374,3 +374,13 @@ function like_and_dislike(id, user_email) {
     localStorage.setItem(`${id}`, "noliked")
   }
 }
+
+
+window.addEventListener("load", remove_loading_window())
+
+function remove_loading_window() {
+  setTimeout(() => {
+    let loading_window = document.getElementById("loading_window")
+    loading_window.style.display = "none"
+  }, 500);
+}

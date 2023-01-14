@@ -402,6 +402,45 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     }
 }
 
+#loading_window {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-background {
+    background: conic-gradient(from 180deg at 50% 50%, #E91E63 0deg, rgba(233, 30, 99, 0) 360deg);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: infinite_rotate 0.5s linear infinite;
+}
+
+.load-circle {
+    background-color: var(--background);
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+}
+
+@keyframes infinite_rotate {
+    0% {
+        rotate: 0deg;
+    }
+
+    100% {
+        rotate: -360deg;
+    }
+}
+
 @media only screen and (max-width: 985px) {
     .main__nav {
         position: unset;
@@ -424,6 +463,7 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
         padding: 20px;
         border-radius: 0px;
         background-color: transparent;
+        border: 0px;
     }
     .edit-data__fieldset {
         width: 100%;
@@ -436,5 +476,8 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     }
     #form--edit-perfil__close--form {
         margin: 20px 20px 0px 0px;
+    }
+    #form--edit-perfil__username {
+        font-size: 18px;
     }
 }
