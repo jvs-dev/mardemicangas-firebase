@@ -177,4 +177,8 @@ fieldset.form__fieldset:has(> input.fieldset__input:focus)  {
     .form__h2 {
         font-size: 20px;
     }
+    #form--signin {
+        padding: 0px;
+        background-color: transparent;
+    }
 }
