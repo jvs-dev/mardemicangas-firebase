@@ -333,4 +333,12 @@ body.light .article--product {
     .section--wrap {
         padding: 0px 0px;
     }
+    #img_product_page_section.zoom {
+        height: 100vh;
+        width: auto;
+        cursor: -webkit-zoom-out;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+    }
 }

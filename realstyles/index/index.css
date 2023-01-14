@@ -590,5 +590,12 @@ body.light .article--product {
         margin: 0px;
         font-weight: 500;
     }
-
+    #img_product_page_section.zoom {
+        height: 100vh;
+        width: auto;
+        cursor: -webkit-zoom-out;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+    }
 }
