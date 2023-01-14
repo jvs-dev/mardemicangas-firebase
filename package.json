@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "firebase": "^9.12.1"
-  }
+  },
+  "name": "mardemicangas-firebase",
+  "version": "1.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvs-dev/mardemicangas-firebase.git"
+  },
+  "keywords": [],
+  "author": "João Vitor Santana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jvs-dev/mardemicangas-firebase/issues"
+  },
+  "homepage": "https://github.com/jvs-dev/mardemicangas-firebase#readme",
+  "description": "Site de e-comerce de miçangas"
 }

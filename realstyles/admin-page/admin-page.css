@@ -87,7 +87,7 @@ body.light .article--product {
 .product__div {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     margin: 15px;
 }
 

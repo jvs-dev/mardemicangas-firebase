@@ -195,6 +195,23 @@ function search_product_and_user() {
           description_product_page_section.textContent = `${objdata.product_description}`
           price_product_page_section.textContent = `R$ ${objdata.product_price}`
           likes_product_page_section.textContent = `${objdata.likes} Likes`
+          function return_user() {
+            onAuthStateChanged(auth, (user) => {
+              if (user) {
+                let uid = user.uid;
+                querySnapshot.forEach((doc) => {
+                  let srtingdata = JSON.stringify(doc.data());
+                  let objdata = JSON.parse(srtingdata)
+                  if (objdata.email == user.email) {
+                    verify_you_like(article.id, objdata.email)
+                  }
+                }
+                )
+              }
+            }
+            )
+          }
+          return_user()
           body.style.overflow = "hidden"
           button_product_page_section.onclick = function () {
             let product_color = document.getElementById("product-color-1").value
@@ -203,6 +220,20 @@ function search_product_and_user() {
             finalize_buy(buy_details)
           }
           heart_product_page_section.onclick = function () {
+            onAuthStateChanged(auth, (user) => {
+              if (user) {
+                const uid = user.uid;
+                querySnapshot.forEach((doc) => {
+                  let srtingdata = JSON.stringify(doc.data());
+                  let objdata = JSON.parse(srtingdata)
+                  if (objdata.email == user.email) {
+                    like_and_dislike(article.id, objdata.email)
+                  }
+                }
+                )
+              }
+            }
+            )
           }
         }
       }
@@ -283,6 +314,9 @@ close_product_page_section.onclick = function () {
 
 
 function verify_you_like(id, user_email) {
+  const realtime_likes = onSnapshot(doc(db, "products", `${id}`), (doc) => {
+    likes_product_page_section.textContent = `${doc.data().likes} Likes`
+  });
   if (localStorage.getItem(`${id}`)) {
     if (localStorage.getItem(`${id}`) == "liked") {
       heart_product_page_section.name = "heart"
@@ -307,16 +341,34 @@ function verify_you_like(id, user_email) {
 
 
 function like_and_dislike(id, user_email) {
-  const usersreference = doc(db, "users", `${user_email}`);
+  let usersreference = doc(db, "users", `${user_email}`);
+  let productsreference = doc(db, "products", `${id}`);
+
+  let actual_likes = likes_product_page_section.textContent
+  actual_likes = actual_likes.replaceAll(' Likes', '')
+  actual_likes = Number(actual_likes)
+
   if (heart_product_page_section.name == "heart-outline") {
     updateDoc(usersreference, {
       products_liked: arrayUnion(`${id}`)
     });
+    updateDoc(productsreference, {
+      likes: actual_likes + 1
+    });
     heart_product_page_section.name = "heart"
     localStorage.setItem(`${id}`, "liked")
+    const realtime_likes = onSnapshot(doc(db, "products", `${id}`), (doc) => {
+      likes_product_page_section.textContent = `${doc.data().likes} Likes`
+    });
   } else {
     updateDoc(usersreference, {
       products_liked: arrayRemove(`${id}`)
+    });
+    updateDoc(productsreference, {
+      likes: actual_likes - 1
+    });
+    const realtime_likes = onSnapshot(doc(db, "products", `${id}`), (doc) => {
+      likes_product_page_section.textContent = `${doc.data().likes} Likes`
     });
     heart_product_page_section.name = "heart-outline"
     localStorage.setItem(`${id}`, "noliked")
