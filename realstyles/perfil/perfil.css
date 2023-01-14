@@ -359,6 +359,7 @@ fieldset.form--edit-perfil__fieldset:has(> input.form--edit-perfil__input:focus)
     color: var(--primary-color);
     font-weight: 500;
     margin: 40px 0px 0px 0px;
+    text-align: center;
 }
 .title--h2--top {
     margin: 0px 0px 40px 0px;
